@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { useEffect } from "react";
 
 const navLinks = [
   {
@@ -23,14 +24,24 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  // Add this useEffect to dynamically load the font
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"; // Replace with your desired font
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
+
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-3xl text-blue-50"
+          style={{ fontFamily: "'Manrope'" }}
         >
-          LOGO
+          Esteban Aleman M.
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

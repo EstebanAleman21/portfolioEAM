@@ -16,19 +16,19 @@ const HeroSection = () => {
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300">
               Hello, I&apos;m{" "}
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
-                "Judy",
+                "Esteban Aleman",
                 1000,
-                "Web Developer",
+                "Software Engineer",
                 1000,
-                "Mobile Developer",
+                "Full Stack Developer",
                 1000,
-                "UI/UX Designer",
+                "Problem Solver",
                 1000,
               ]}
               wrapper="span"
@@ -42,14 +42,14 @@ const HeroSection = () => {
           </p>
           <div>
             <Link
-              href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
+              href="www.linkedin.com/in/estebanaleman21"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-white to-blue-300 hover:bg-slate-200 text-black"
             >
               Hire Me
             </Link>
             <Link
               href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-white to-blue-300 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
@@ -68,8 +68,8 @@ const HeroSection = () => {
               src="/images/hero-image.png"
               alt="hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
+              width={600}
+              height={600}
             />
           </div>
         </motion.div>

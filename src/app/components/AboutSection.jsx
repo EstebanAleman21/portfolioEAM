@@ -3,6 +3,44 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+const splitListIntoColumns = (list, columns) => {
+  const perColumn = Math.ceil(list.length / columns);
+  return Array.from({ length: columns }, (_, i) =>
+    list.slice(i * perColumn, i * perColumn + perColumn)
+  );
+};
+
+const skillsList = [
+  "Node.js",
+  "Express",
+  "NextJS",
+  "Python",
+  "JavaScript",
+  "ReactJs",
+  "SQL / noSQL",
+  "HTML",
+  "CSS",
+  "Git",
+  "Oracle server",
+  "MongoDB",
+  "C++ OOP",
+  "Data Structures & Algorithms",
+];
+
+const skillsColumns = splitListIntoColumns(skillsList, 3);
+
+const SkillsContent = () => (
+  <div className="flex">
+    {skillsColumns.map((column, index) => (
+      <ul key={index} className="list-disc pl-2 flex-1">
+        {column.map((skill, i) => (
+          <li key={i}>{skill}</li>
+        ))}
+      </ul>
+    ))}
+  </div>
+);
+
 const TAB_DATA = [
   {
     title: "Skills",
@@ -11,10 +49,14 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li>Node.js</li>
         <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>NextJS</li>
+        <li>Python</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>ReactJs</li>
+        <li>SQL / noSQL</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Git</li>
       </ul>
     ),
   },
@@ -23,18 +65,24 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Tecnologico de Monterrey (ITESM)</li>
+        <ul className="list-disc pl-4">
+          <li>B.S. Computer Science and Technology</li>
+          <li>GPA: 3.75</li>
+          <li>Graduation Date: Dec 2025</li>
+        </ul>
       </ul>
     ),
   },
   {
-    title: "Certifications",
+    title: "Certifications / courses",
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Meta Frontend Developer</li>
+        <li>Meta Backend Developer</li>
+        <li>Python - University of Michigan</li>
+        <li>C++ - University of California</li>
       </ul>
     ),
   },
@@ -53,16 +101,20 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image
+          src="/images/about-image.png"
+          alt="about-image"
+          width={500}
+          height={500}
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            Software Engineer with a passion for building efficient and scalable
+            solutions, eager to tackle complex challenges and apply innovative
+            thinking to full stack development. I have demonstrated expertise in
+            various programming languages, problem-solving, and effective
+            collaboration across teams to deliver impactful results.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -84,11 +136,15 @@ const AboutSection = () => {
               active={tab === "certifications"}
             >
               {" "}
-              Certifications{" "}
+              Certifications / Courses{" "}
             </TabButton>
           </div>
           <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+            {TAB_DATA.find((t) => t.id === tab).id === "skills" ? (
+              <SkillsContent />
+            ) : (
+              TAB_DATA.find((t) => t.id === tab).content
+            )}
           </div>
         </div>
       </div>
