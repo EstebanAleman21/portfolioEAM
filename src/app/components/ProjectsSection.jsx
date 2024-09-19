@@ -9,7 +9,7 @@ const projectsData = [
     id: 1,
     title: "Sorteos Tec",
     description:
-      "Gamification of Sorteos Tec web-site with video game in Unity",
+      "Gamification of Sorteos Tec website with a Unity-based video game. Developed interactive user experience for a broader audience.",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EstebanAleman21/SorteoTec",
@@ -19,7 +19,7 @@ const projectsData = [
     id: 2,
     title: "Vision Doc",
     description:
-      "3D model viewing and studying project for med students. Devoloped for the Apple Vision Pro",
+      "3D model viewing and study tool for medical students. Created specifically for the Apple Vision Pro, enhancing immersive learning.",
     image: "/images/projects/2.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/EstebanAleman21/VisionDoc",
@@ -29,7 +29,7 @@ const projectsData = [
     id: 3,
     title: "Finance Tracker",
     description:
-      "Personal Finance developed for the HackMty 2024 (Hackathon). Used for Capital One challenge used nessie API for data.",
+      "Personal finance app created for HackMty 2024. Utilized Nessie API for data, developed for Capital One's challenge.",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/EstebanAleman21/404_NOTFOUND",
@@ -39,7 +39,7 @@ const projectsData = [
     id: 4,
     title: "Personal Finance Tracker",
     description:
-      "Developed a personal finance tracker for personal finances. Deployed and hosted web app. Responsive for mobile and desktop.",
+      "A personal finance tracking web app. Fully deployed and hosted, designed to be responsive across mobile and desktop platforms.",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile", "Web"],
     gitUrl: "/",
